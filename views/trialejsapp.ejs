@@ -6,16 +6,28 @@
         </div>
 
         <div class="box">        
-     <%   for (var i =0; i < addeditem.length; i++){ %>
+     <!-- <%   for (var i =0; i < addeditem.length; i++){ %> //commented to use foreach loop method
         <div class="item">
             <input type ="checkbox">
-            <p> <%= addeditem[i] %></p>
+            <p> <%= addeditem[i].name %></p>
             </div>
-     <%    } %>
+     <%    } %> -->
+    <%  addeditem.forEach(function(item){ %>
+            <form action="/delete" method="post">              
+                 <div class="item">
+                    <input type ="checkbox" name = "checkedbox" value = "<%= item._id %>" onchange="this.form.submit()">
+                    <p> <%= item.name %></p>
+                </div>
+                <input type="hidden" name="listNameC" value = "<%= listTitle %>" ></input> 
+                <!-- to identify if it is user entred param or today list to delete item -->
+            </form> 
+     <%      });  %>
 
-        <form class="item" action = "/" method="post" >
-            <input type="text" name="newitem" placeholder ="To DO item" autofocus>
-            <button type="submit" name ="btnlist" value =<%= listTitle %> > +</button>
+
+
+        <form class = "item" action = "/" method = "post" >
+            <input type="text" name="newitem" placeholder ="To Do item" autofocus>
+            <button type="submit" name ="btnlist" value = "<%= listTitle %>" > +</button> 
         </form>
         </div>   
     </body>
