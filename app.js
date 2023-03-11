@@ -142,7 +142,7 @@ app.post("/delete", function(req, res){
 
     if( listnameC === "Today"){
         Item.findByIdAndRemove(checkitemId , function(err){
-            if(err) console.log("cant remove from db");
+            if(err) console.log("can't remove from db");
             else console.log("removed");
         });
         res.redirect("/");
@@ -196,7 +196,18 @@ app.get("/about", function(req, res){
 //     res.redirect("/work");
 // })
 
+let port = process.env.PORT;
+if(port == null ||port == ""){
+    port =3000;
+}
+app.listen(port);
 
-app.listen(3000, function(){
-    console.log("server running on 3000");
-});
+app.listen(port, function(){
+        console.log("server running suucessfullly");
+    });
+
+
+//only for local
+// app.listen(3000, function(){
+//     console.log("server running on 3000");
+// });

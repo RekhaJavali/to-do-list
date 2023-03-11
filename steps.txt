@@ -1,0 +1,5 @@
+#to deploy to vercel
+
+add extra lines in packge.json and add vercel.json file
+
+use cloud db, add credentials
