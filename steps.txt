@@ -1,10 +1,8 @@
-#put customname on url 
-
-
+#put custom name on url 
 
 
 to deploy to vercel
 
-add extra lines in packge.json and add vercel.json file
+add extra lines in package.json(engines) and add vercel.json file
 
 use cloud db, add credentials

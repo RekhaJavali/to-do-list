@@ -211,3 +211,5 @@ app.listen(port, function(){
 // app.listen(3000, function(){
 //     console.log("server running on 3000");
 // });
+
+module.exports = app; //for vercel deployment
